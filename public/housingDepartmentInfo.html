@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="dashboard.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $.get("housing-departments-json", function(data, status){
+                alert("Data: " + data[0].name + "\nStatus: " + status);
+
+                data.forEach(populateTable);
+
+                function populateTable(item, index) {
+                    document.getElementById("overview").innerHTML += "<tr><td>" + item.name + "</td><td>" +
+                        item.address + "</td> <td>" + item.description + "</td><td><button><a href='/housing-department?id="+item.id+"'>Se mere </a> </button>"
+
+                }
+
+            });
+
+
+        });
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table id="overview">
+    <tr>
+        <th>Navn</th>
+        <th>Adresse</th>
+        <th>Beskrivelse</th>
+        <th>åben for nye opskrivninger</th>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
