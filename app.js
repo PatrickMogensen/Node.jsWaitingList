@@ -11,7 +11,6 @@ const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 const loginRouter = require('./routes/login')
 const registerRouter = require('./routes/register')
-const path = require('path')
 
 const mysql = require('mysql')
 app.use(logger('dev'))
