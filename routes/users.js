@@ -1,5 +1,5 @@
 const express = require('express')
-const authentication = require('/Users/patrickmogensen/IdeaProjects/SWK2020/Node.jsWaitingList/util/authentication.js')
+const authentication = require('./util/authentication.js')
 
 const router = express.Router()
 
