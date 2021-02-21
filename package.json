@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "engines": {
+    "node": "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "cookie-parser": "~1.4.4",
@@ -15,6 +18,13 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "session": "^0.1.0",
-    "socket.io": "^3.0.4"
+    "socket.io": "^3.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
   }
 }

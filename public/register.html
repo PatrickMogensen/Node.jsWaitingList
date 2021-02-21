@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title> </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 </head>
 <body>
 
-<h3>Opret en ny profil</h3>
-<form action="/register" method="post">
-    Email:
-    <br>
-    <input type="email" name="email">
-    <br>
-    <br>
-    Adgangskode:
-    <br>
-    <input type="password" name="password">
-    <br>
-    <br>
-    Gentag Adgangskode:
-    <br>
-    <input type="password" name="passwordRepeat">
-    <br>
-    <br>
-    <input type="submit" value="Opret profil">
-</form>
+<div class=" d-flex align-items-center justify-content-center mt-5" >
 
-<p> Har du allered en profil? <a href="/login">Klick her for at logge ind</a></p>
+
+    <form class=" col-4  " action="/register" method="post">
+        <h3> Opret profil</h3>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email </label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+
+        <div class="mb-3">
+            <label for="passwordRepeat" class="form-label">Gentag password</label>
+            <input type="password" class="form-control" id="passwordRepeat" name="passwordRepeat">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Opret Profil</button>
+        <br>
+
+        <p> Har du allered en profil? <a href="/login">Klick her for at logge ind</a></p>
+
+    </form>
+
+</div>
+
 </body>
 </html>

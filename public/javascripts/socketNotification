@@ -1,0 +1,7 @@
+
+
+socket.on('notification', (msg) => {
+    console.log("client socket id " + socket.id);
+    $('.toast').toast('show');
+    console.log('NOTIFICATINO: ' + msg);
+});

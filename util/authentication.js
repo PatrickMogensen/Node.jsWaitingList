@@ -6,7 +6,7 @@ function createAccount(req, res, connection, successRedirect) {
         if (results.length === 0) {
             if (req.body.password === req.body.passwordRepeat) {
                 bcrypt.hash(req.body.password, saltRounds, (error, hash) => {
-                    connection.query("INSERT INTO waiting_list.users (email, password) VALUES (?,?)", [req.body.email, hash]);
+                    connection.query("INSERT INTO waiting_list.users (email, password, role) VALUES (?,?,?)", [req.body.email, hash, "user"]);
                     res.redirect(successRedirect);
                 });
             }
@@ -19,6 +19,7 @@ function createAccount(req, res, connection, successRedirect) {
 }
 
 function logIn(req, res,connection, successRedirect) {
+    console.log(req.body.email)
     connection.query(`SELECT * FROM waiting_list.users WHERE email = ?;`, [req.body.email], (error, results, fields) => {
         bcrypt.compare(req.body.password, results[0].password, (error, result) => {
             console.log(result);
